@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="text/jsx">
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/jsx">
 
       /**
        * EXERCISE
@@ -22,13 +22,35 @@
        */
 
       var Greeter = React.createClass({
+      getInitialState: function() {
+        return {value: 'Hello!', welcome: 'Welcome to react, ' };
+      },
+      handleChange: function(event) {
+        this.setState({value: event.target.value});
+      },
+        render: function() {
+          return (
+            <div>
+              <input 
+                type="text"
+                value={this.state.value}
+                onChange={this.handleChange}
+              />
+              <div>
+              <h1>
+                {this.state.welcome}{this.state.value}
+                </h1>
+              </div>
+            </div>
+            )
+          }
 
-      });
+        });
 
-      ReactDOM.render(
+        ReactDOM.render(
         <Greeter/>,
         document.getElementById('root')
-      );
-    </script>
-  </body>
-</html>
+        );
+      </script>
+    </body>
+    </html>

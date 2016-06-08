@@ -12,20 +12,47 @@
       /**
        * EXERCISE
        *
-       * CounterList
+       * Counter
        * ------------------------
        * Requirements:
-       *   - Create a list of counters from exercise 3
-       *   - The user should be able to add and remove counters from the list
-       *   - All counters should have different state
+       *   - The counter should start displaying 0
+       *   - There should be a minus button that decrements the counter by one
+       *   - There should be a plus button that increments the counter by one
+       *
        */
 
-      var CounterList = React.createClass({
+      var Counter= React.createClass({
+        getInitialState: function() {
+        return {value: 0 };
+      },
+        handleIncrement: function(event) {
+          this.setState({value: this.state.value + 1})
+        },
+        handleDecrement: function(event) {
+          this.setState({value: this.state.value - 1})
+        },
+        
+        render: function() {
+          var numStyle = {
+          margin: '10px'
+        };
+          return (
+            <div>
+            <h1>
+            <button onClick={this.handleIncrement}> Add One + </button> 
+            <span style={numStyle}>{this.state.value}</span>
+            <button onClick={this.handleDecrement}> Subtract One + </button>
+           
+              
+            </h1>
+            </div>
+            )
+        }
 
       });
 
       ReactDOM.render(
-        <CounterList />,
+        <Counter />,
         document.getElementById('root')
       );
     </script>

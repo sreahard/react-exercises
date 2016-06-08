@@ -1,0 +1,28 @@
+{
+  "name": "react-exercises",
+  "version": "1.0.0",
+  "description": "Each html file in this project contains a react exercise. React and the JSX transformer are already included so you should be able to start coding right away.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run clean && npm run build:webpack && nodemon ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sreahard/react-exercises.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sreahard/react-exercises/issues"
+  },
+  "homepage": "https://github.com/sreahard/react-exercises#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "webpack": "^1.13.1",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-hot-middleware": "^2.10.0"
+  }
+}
