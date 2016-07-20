@@ -6,7 +6,7 @@ var App = React.createClass({
   render: function() {
     return (
       <div>
-      My Counter List! HOT!! SHIT!!!
+      My Counter List! 
       <CounterList />
       </div>
       )

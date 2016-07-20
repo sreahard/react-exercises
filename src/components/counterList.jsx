@@ -3,28 +3,28 @@ var ReactDOM = require('react-dom')
 var Counter = require('./counter')
 
 var CounterList = React.createClass({
-  getInitialState: function() {
-    return {counters: false};
+  getInitialState : function(){
+    return { 
+      counters : []
+    }
   },
-  handleCounterAdd: function(event) {
-    this.setState({counters: true})
+  addcounter : function(){
+       this.state.counters.push(<Counter/>)
+         this.setState({counters : this.state.counters})
+       },
+  deletecounter : function(){
+    this.state.counters.pop()
+    this.setState({counters : this.state.counters})
   },
-
-
-  render: function() {
-    var counter = null;
-      if (this.state.counters) {
-        counter = <Counter />
-      }
-    
+  render : function(){
     return (
-      <div>
-        <button onClick={this.handleCounterAdd}> Add Counter </button>
-        {counter}
+      <div> 
+        <button onClick = {this.addcounter}>Add a Counter</button>
+        <button onClick = {this.deletecounter}>Remove last Counter</button>
+        {this.state.counters}
       </div>
     )
-  }
-
+  },
 });
 
 module.exports = CounterList
